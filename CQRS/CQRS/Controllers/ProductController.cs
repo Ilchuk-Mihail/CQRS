@@ -52,6 +52,13 @@ namespace CQRS.Controllers
                 //ExpectedVersion = 1
             });
 
+            await _dispatcher.SendAndPublishAsync<PublishProduct, Product>(new PublishProduct
+            {
+                AggregateRootId = productId,
+                UserId = userId,
+                // Source = source,
+                //ExpectedVersion = 1
+            });
 
             // Get the view model that should return the title used in the last update.
             var product = await _dispatcher.GetResultAsync<GetProduct, ProductViewModel>(new GetProduct

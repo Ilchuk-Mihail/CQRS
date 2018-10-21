@@ -52,6 +52,18 @@ namespace CQRS.Domain.Aggregates
             });
         }
 
+        public void Publish()
+        {
+            AddEvent(new ProductPublished
+            {
+                AggregateRootId = Id
+            });
+        }
+
+        private void Apply(ProductPublished @event)
+        {
+            Status = ProductStatus.Published;
+        }
 
         private void Apply(ProductCreated @event)
         {
