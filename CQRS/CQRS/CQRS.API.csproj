@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="OpenCqrs" Version="5.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CQRS.Domain\CQRS.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OpenCqrs.Bus.ServiceBus">
+      <HintPath>C:\Users\PC\.nuget\packages\opencqrs.bus.servicebus\5.3.0\lib\netcoreapp2.1\OpenCqrs.Bus.ServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCqrs.Store.Cosmos.Mongo">
+      <HintPath>C:\Users\PC\.nuget\packages\opencqrs.store.cosmos.mongo\5.3.0\lib\netcoreapp2.1\OpenCqrs.Store.Cosmos.Mongo.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

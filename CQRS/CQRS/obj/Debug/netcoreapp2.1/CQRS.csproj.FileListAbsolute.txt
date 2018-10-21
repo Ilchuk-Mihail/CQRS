@@ -1,0 +1,11 @@
+D:\Repositories\CQRS\CQRS\CQRS\bin\Debug\netcoreapp2.1\CQRS.deps.json
+D:\Repositories\CQRS\CQRS\CQRS\bin\Debug\netcoreapp2.1\CQRS.runtimeconfig.json
+D:\Repositories\CQRS\CQRS\CQRS\bin\Debug\netcoreapp2.1\CQRS.runtimeconfig.dev.json
+D:\Repositories\CQRS\CQRS\CQRS\bin\Debug\netcoreapp2.1\CQRS.dll
+D:\Repositories\CQRS\CQRS\CQRS\obj\Debug\netcoreapp2.1\CQRS.csprojAssemblyReference.cache
+D:\Repositories\CQRS\CQRS\CQRS\obj\Debug\netcoreapp2.1\CQRS.csproj.CoreCompileInputs.cache
+D:\Repositories\CQRS\CQRS\CQRS\obj\Debug\netcoreapp2.1\CQRS.RazorAssemblyInfo.cache
+D:\Repositories\CQRS\CQRS\CQRS\obj\Debug\netcoreapp2.1\CQRS.RazorAssemblyInfo.cs
+D:\Repositories\CQRS\CQRS\CQRS\obj\Debug\netcoreapp2.1\CQRS.AssemblyInfoInputs.cache
+D:\Repositories\CQRS\CQRS\CQRS\obj\Debug\netcoreapp2.1\CQRS.AssemblyInfo.cs
+D:\Repositories\CQRS\CQRS\CQRS\obj\Debug\netcoreapp2.1\CQRS.RazorTargetAssemblyInfo.cache
