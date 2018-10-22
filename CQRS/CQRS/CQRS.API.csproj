@@ -5,12 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EventFlow" Version="0.67.3697" />
+    <PackageReference Include="EventFlow.MongoDB" Version="0.1.26" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="OpenCqrs" Version="5.3.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CQRS.Domain.EventFlow\CQRS.Domain.EventFlow.csproj" />
     <ProjectReference Include="..\CQRS.Domain\CQRS.Domain.csproj" />
   </ItemGroup>
 
