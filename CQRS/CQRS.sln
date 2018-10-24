@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.API", "CQRS\CQRS.API.c
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.Domain", "CQRS.Domain\CQRS.Domain.csproj", "{E1C9A75D-B22E-4A37-B4F2-45C4DF113ADA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Domain.EventFlow", "CQRS.Domain.EventFlow\CQRS.Domain.EventFlow.csproj", "{D54760A9-E5DC-47B5-9B44-47DB339DE917}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.Domain.EventFlow", "CQRS.Domain.EventFlow\CQRS.Domain.EventFlow.csproj", "{D54760A9-E5DC-47B5-9B44-47DB339DE917}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventFlow.MongoDb", "EventFlow.MongoDb", "{02304B5C-F248-4674-AB76-4F4CFC91162D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventFlow.MongoDB", "EventFlow.MongoDB-develop\Source\EventFlow.MongoDB\EventFlow.MongoDB.csproj", "{8FBDAAEA-D9E0-4CC5-934F-7121E11F0637}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,16 @@ Global
 		{D54760A9-E5DC-47B5-9B44-47DB339DE917}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D54760A9-E5DC-47B5-9B44-47DB339DE917}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D54760A9-E5DC-47B5-9B44-47DB339DE917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FBDAAEA-D9E0-4CC5-934F-7121E11F0637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FBDAAEA-D9E0-4CC5-934F-7121E11F0637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FBDAAEA-D9E0-4CC5-934F-7121E11F0637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FBDAAEA-D9E0-4CC5-934F-7121E11F0637}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8FBDAAEA-D9E0-4CC5-934F-7121E11F0637} = {02304B5C-F248-4674-AB76-4F4CFC91162D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {575B9E34-A87B-42C2-8979-71DA59EA8F26}

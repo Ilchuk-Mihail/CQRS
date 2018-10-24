@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="EventFlow" Version="0.67.3697" />
-    <PackageReference Include="EventFlow.MongoDB" Version="0.1.26" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />

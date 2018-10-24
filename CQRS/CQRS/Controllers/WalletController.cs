@@ -24,16 +24,20 @@ namespace CQRS.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-
+            string result = string.Empty;
             using (var resolver = EventFlowOptions.New
                 .AddEvents(typeof(ProductCreated))
+                .AddEvents(typeof(MagicNumberIcremented))
                 .AddCommands(typeof(CreateProduct))
+                .AddCommands(typeof(IncMagicNumber))
                 .AddCommandHandlers(typeof(CreateProductHandler))
+                .AddCommandHandlers(typeof(IncMagicNumberHandler))
                 .ConfigureMongoDb("mongodb+srv://cqrs_user:cqrs@cqrscluster-cgwnw.mongodb.net/test?retryWrites=true", 
                     "event-flow-store")
                 //.UseInMemoryReadStoreFor<ProductReadModel>()
                 
                 .UseMongoDbEventStore()
+                .UseMongoDbSnapshotStore()
                 .UseMongoDbReadModel<ProductReadModelMongo>()
 
                 //.RegisterServices(sr =>
@@ -45,27 +49,33 @@ namespace CQRS.API.Controllers
                 .CreateResolver(true))
             {
                 // Create a new identity for our aggregate root
-                var exampleId = ProductId.New;
+                //var exampleId = ProductId.New;
+                var exampleId = new ProductId("product-9f1f4f71-a83f-445a-9764-b0c457fc61a5");
 
                 // Resolve the command bus and use it to publish a command
                 var commandBus = resolver.Resolve<ICommandBus>();
+                //await commandBus.PublishAsync(
+                //        new CreateProduct(exampleId, 1), CancellationToken.None)
+                //    .ConfigureAwait(false);
+
                 await commandBus.PublishAsync(
-                        new CreateProduct(exampleId, 42), CancellationToken.None)
+                        new IncMagicNumber(exampleId, 1), CancellationToken.None)
                     .ConfigureAwait(false);
+
 
                 // Resolve the query handler and use the built-in query for fetching
                 // read models by identity to get our read model representing the
                 // state of our aggregate root
                 var queryProcessor = resolver.Resolve<IQueryProcessor>();
                 var exampleReadModel = await queryProcessor.ProcessAsync(
-                        new ReadModelByIdQuery<ProductReadModel>(exampleId), CancellationToken.None)
+                        new ReadModelByIdQuery<ProductReadModelMongo>(exampleId), CancellationToken.None)
                     .ConfigureAwait(false);
-
+                result = exampleReadModel.MagicNumber.ToString();
                 // Verify that the read model has the expected magic number
-               // exampleReadModel.MagicNumber.Should().Be(42);
+                // exampleReadModel.MagicNumber.Should().Be(42);
             }
 
-            return Ok();
+            return Ok(result);
         }
     }
 }

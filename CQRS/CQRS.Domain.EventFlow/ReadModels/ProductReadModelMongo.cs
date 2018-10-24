@@ -11,7 +11,7 @@ using EventFlow.ReadStores;
 namespace CQRS.Domain.EventFlow.ReadModels
 {
     [MongoDbCollectionName("ef-products")]
-    public class ProductReadModelMongo : IMongoDbReadModel, IAmReadModelFor<Product, ProductId, ProductCreated>
+    public class ProductReadModelMongo : IMongoDbReadModel, IAmReadModelFor<Product, ProductId, ProductCreated>, IAmReadModelFor<Product, ProductId, MagicNumberIcremented>
     {
         public string _id { get; set; }
         public long? _version { get; set; }
@@ -21,6 +21,12 @@ namespace CQRS.Domain.EventFlow.ReadModels
         {
             _id = domainEvent.AggregateIdentity.Value;
             MagicNumber = domainEvent.AggregateEvent.MagicNumber;
+        }
+
+        public void Apply(IReadModelContext context, IDomainEvent<Product, ProductId, MagicNumberIcremented> domainEvent)
+        {
+            _id = domainEvent.AggregateIdentity.Value;
+            MagicNumber += domainEvent.AggregateEvent.MagicNumber;
         }
     }
 }
